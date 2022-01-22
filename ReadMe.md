@@ -1,5 +1,5 @@
 # Password Locker CLI Project
-## Built by Obiero felix (21st Jan 22)
+## Author : Obiero felix (21st Jan 22)
 ### Project Description
 Password Locker is a command Line application that allows users to create accounts, store utheir usernames, passwords, emails
 
