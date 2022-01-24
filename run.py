@@ -61,26 +61,25 @@ def main():
 
         print(" 1) LOGIN \n 2) SIGN UP \n 3) ABOUT PASSLOCK \n 4) DISPLAY ACCOUNTS \n 5) SIGN OUT")
 
-        choice = int(input())
-        if choice == 1:
+        select = int(input())
+        if select == 1:
             print('Enter username')
             username = input()
             print('Enter passoword')
             password = input()
             account = find_accounts(username)
             if account.user_name == username and account.password == password:
-
                 print('LOGIN SUCCESSFUL')
                 while True:
 
                     print(
-                        f'Welcome {username},Please select from the menus below')
+                        f'Welcome {username},Please select from the Options below')
 
                     print(
                         ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
 
-                    log_choice = int(input())
-                    if log_choice == 1:
+                    log_select = int(input())
+                    if log_select == 1:
                         print('New page')
                         print('*'*100)
 
@@ -93,7 +92,7 @@ def main():
                     # created and saved page
                         save_page(create_page(page, password))
 
-                    elif log_choice == 2:
+                    elif log_select == 2:
                         print("Enter Page name")
 
                         page = input()
@@ -104,7 +103,7 @@ def main():
                         else:
                             print(f'I cant find {page}')
 
-                    elif log_choice == 3:
+                    elif log_select == 3:
                         if display_pages():
                             for pag in display_pages():
                                 print(
@@ -114,13 +113,13 @@ def main():
                             print('NO PASSWORD SAVED YET')
                             print('\n')
 
-                    elif log_choice == 4:
+                    elif log_select == 4:
                         print('adios')
                         break
             else:
-                print('wrong credentials')
+                return False
 
-        if choice == 2:
+        if select == 2:
             print('NEW ACCOUNT')
             print('*'*100)
 
@@ -143,16 +142,16 @@ def main():
             while True:
 
                 print(
-                    f'Welcome {user_name}, Use the following numbers to select their corresponding values')
+                    f'Welcome {user_name}, Select from the Options below:')
                 print(
                     ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
 
-                log_choice = int(input())
-                if log_choice == 1:
+                log_select = int(input())
+                if log_select == 1:
                     print('Create page')
                     print('*'*100)
 
-                    print('Page name')
+                    print('Page Name: ')
                     page = input()
 
                     print('password')
@@ -161,8 +160,8 @@ def main():
                     # created and saved page
                     save_page(create_page(page, password))
 
-                elif log_choice == 2:
-                    print("Enter page name you want to delete")
+                elif log_select == 2:
+                    print("Enter Page Name")
 
                     page = input()
                     if isexist_page(page):
@@ -170,9 +169,9 @@ def main():
                         delete_page(remove_page)
 
                     else:
-                        print(f'Page not Found {page}')
+                        print(f'PAGE NOT FOUND {page}')
 
-                elif log_choice == 3:
+                elif log_select == 3:
                     if display_pages():
                         for pag in display_pages():
                             print(
@@ -181,17 +180,17 @@ def main():
                     else:
                         print('NO PASSWORDS CREATED')
 
-                elif log_choice == 4:
+                elif log_select == 4:
                     break
 
-        elif choice == 3:
+        elif select == 3:
             print('ABOUT PASSLOCK')
             print(
                 '''
             PassLock is a scriped based aplication that helps(allows) users to store multiple passwords on different accounts. Using, passlock one is able to track all his/her social media accounts passwords and thus very secure against fraud and hacks  
                 ''')
 
-        elif choice == 4:
+        elif select == 4:
             if display_accounts():
                 for account in display_accounts():
                     print(
@@ -200,7 +199,7 @@ def main():
             else:
                 print('NO ACCOUNTS')
 
-        elif choice == 5:
+        elif select == 5:
             print('Untill next time.!GOODBYE :)')
             break
 
