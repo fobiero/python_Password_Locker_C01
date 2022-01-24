@@ -5,38 +5,38 @@ class Credential:
         self.user_name = user_name
         self.password = password
 
-    user_accounts = []
+    user_credential = []
 
     def save_account(self):
         '''
         save accounts to the accounts array
         '''
-        Credential.user_accounts.append(self)
+        Credential.user_credential.append(self)
 
     def delete_account(self):
         '''
         Delete Account
         '''
-        Credential.user_accounts.remove(self)
+        Credential.user_credential.remove(self)
     @classmethod
-    def find_by_user_name(cls, user_name):
+    def find_by_user_name(cr, user_name):
         '''
         If Username does not exist then returns to account
         '''
-        for account in cls.user_accounts:
+        for account in cr.user_credential:
             if account.user_name == user_name:
                 return account
 
     @classmethod
-    def account_exists(cls, user_name):
+    def account_exists(cr, user_name):
         '''
         Check for accounts
         '''
-        for account in cls.user_accounts:
+        for account in cr.user_credential:
             if account.user_name == user_name:
                 return True
         return False
 
     @classmethod
-    def display_accounts(cls):
-        return cls.user_accounts
+    def display_accounts(cr):
+        return cr.user_credential
