@@ -58,7 +58,7 @@ def main():
     print('Please Use the provided letters to get you started')
     while True:
 
-        print(" A) LOGIN \n B) SIGN UP \n C) ABOUT PASSLOCK \n D) DISPLAY ACCOUNTS \n E) SIGN OUT")
+        print(" 1) LOGIN \n 2) SIGN UP \n 3) ABOUT PASSLOCK \n 4) DISPLAY ACCOUNTS \n 5) SIGN OUT")
 
         choice = int(input())
         if choice == 1:
