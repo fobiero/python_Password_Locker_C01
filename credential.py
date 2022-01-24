@@ -21,7 +21,7 @@ class Credential:
     @classmethod
     def find_by_user_name(cr, user_name):
         '''
-        If Username does not exist then returns to account
+        If Username does not exist then terminates app
         '''
         for account in cr.user_credential:
             if account.user_name == user_name:

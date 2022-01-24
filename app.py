@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python3
 
 from credential import Credential
 from passwords import Password
@@ -42,7 +42,7 @@ def find_page(pager):
     return Password.find_by_page(pager)
 
 
-def isexist_page(pager):
+def is_valid(pager):
     return Password.page_exists(pager)
 
 
@@ -71,10 +71,8 @@ def main():
             if account.user_name == username and account.password == password:
                 print('LOGIN SUCCESSFUL')
                 while True:
-
                     print(
                         f'Welcome {username},Please select from the Options below')
-
                     print(
                         ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
 
@@ -96,7 +94,7 @@ def main():
                         print("Enter Page name")
 
                         page = input()
-                        if isexist_page(page):
+                        if is_valid(page):
                             remove_page = (page)
                             delete_page(remove_page)
 
@@ -105,10 +103,8 @@ def main():
 
                     elif log_select == 3:
                         if display_pages():
-                            for pag in display_pages():
-                                print(
-                                    f'{pag.page}:{pag.password}'
-                                )
+                            for log in display_pages():
+                                print(f'{log.page}:{log.password}')
                         else:
                             print('NO PASSWORD SAVED YET')
                             print('\n')
@@ -164,7 +160,7 @@ def main():
                     print("Enter Page Name")
 
                     page = input()
-                    if isexist_page(page):
+                    if is_valid(page):
                         remove_page = (page)
                         delete_page(remove_page)
 

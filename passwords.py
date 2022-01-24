@@ -12,17 +12,17 @@ class Password:
     def delete_page(self):
         Password.user_pass.remove(self)
 
-    @classmethod
-    def display_page(cls):
+    # @classmethod
+    def display_page(self, cls):
         return cls.user_pass
 
-    @classmethod
+    # @classmethod
     def find_by_page(cls, pager):
         for paged in cls.user_pass:
             if paged.page == pager:
                 return paged
 
-    @classmethod
+    # @classmethod
     def page_exists(cls, pager):
         for paged in cls.user_pass:
             if paged.page == pager:
