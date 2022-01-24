@@ -3,27 +3,28 @@ class Password:
         self.page = page
         self.password = password
 
-    user_passwords = []
+# all the user passwords stored here 
+    user_pass = []
 
     def save_page(self):
-        Password.user_passwords.append(self)
+        Password.user_pass.append(self)
 
     def delete_page(self):
-        Password.user_passwords.remove(self)
+        Password.user_pass.remove(self)
 
     @classmethod
     def display_page(cls):
-        return cls.user_passwords
+        return cls.user_pass
 
     @classmethod
     def find_by_page(cls, pager):
-        for pagy in cls.user_passwords:
-            if pagy.page == pager:
-                return pagy
+        for paged in cls.user_pass:
+            if paged.page == pager:
+                return paged
 
     @classmethod
     def page_exists(cls, pager):
-        for pagy in cls.user_passwords:
-            if pagy.page == pager:
-                return pagy
+        for paged in cls.user_pass:
+            if paged.page == pager:
+                return paged
         return False
