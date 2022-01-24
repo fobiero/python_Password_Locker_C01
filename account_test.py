@@ -1,4 +1,4 @@
-from accounts import Accounts
+from credential import Accounts
 import unittest
 
 class TestAccount(unittest.TestCase):
