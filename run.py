@@ -1,10 +1,11 @@
 #!/usr/bin/env python3.6
-from accounts import Accounts
+
+from credential import Credential
 from passwords import Password
 
 
 def create_account(first_name, last_name, user_name, password):
-    accounts = Accounts(first_name, last_name, user_name, password)
+    accounts = Credential(first_name, last_name, user_name, password)
     return accounts
 
 
@@ -17,15 +18,15 @@ def delete_account(accounts):
 
 
 def find_accounts(user_name):
-    return Accounts.find_by_user_name(user_name)
+    return Credential.find_by_user_name(user_name)
 
 
 def isexist_accounts(user_name):
-    return Accounts.account_exists(user_name)
+    return Credential.account_exists(user_name)
 
 
 def display_accounts():
-    return Accounts.display_accounts()
+    return Credential.display_accounts()
 
 
 def create_page(page, password):
@@ -73,7 +74,7 @@ def main():
                 while True:
 
                     print(
-                        f'Welcome {username}, Use the following numbers to select their corresponding          values')
+                        f'Welcome {username}, Use the following numbers to select their corresponding values')
 
                     print(
                         ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
@@ -178,7 +179,7 @@ def main():
                                 f'{pag.page}:{pag.password}'
                             )
                     else:
-                        print('NO PASSWORD SAVED YET')
+                        print('NO PASSWORDS CREATED')
 
                 elif log_choice == 4:
                     break
@@ -187,8 +188,8 @@ def main():
             print('ABOUT PASSLOCK')
             print(
                 '''
-            Passlock is an sort of script application that allows you to store  password from different ccounts. In case of many accounts on social media passlock can be used to store the different password from the social media  accounts.Instead of having to use one password for all your sites so that you can remember  easily,you can use different password and store them in passlock and only have to remember your passlock password. This can prove to be very helpful especially  against hackers.
-                                    ''')
+            PassLock is a scriped based aplication that helps(allows) users to store multiple passwords on different accounts. Using, passlock one is able to track all his/her social media accounts passwords and thus very secure against fraud and hacks  
+                ''')
 
         elif choice == 4:
             if display_accounts():
@@ -200,7 +201,7 @@ def main():
                 print('NO ACCOUNTS')
 
         elif choice == 5:
-            print('adios')
+            print('We have to see you Leave, :) Untill next time. GOODBYE!')
             break
 
 

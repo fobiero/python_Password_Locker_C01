@@ -1,4 +1,4 @@
-class Accounts:
+class Credential:
     def __init__(self, first_name, last_name, user_name, password):
         self.first_name = first_name
         self.last_name = last_name
@@ -11,13 +11,13 @@ class Accounts:
         '''
         save accounts to the accounts array
         '''
-        Accounts.user_accounts.append(self)
+        Credential.user_accounts.append(self)
 
     def delete_account(self):
         '''
         Delete Account
         '''
-        Accounts.user_accounts.remove(self)
+        Credential.user_accounts.remove(self)
     @classmethod
     def find_by_user_name(cls, user_name):
         '''
