@@ -5,16 +5,16 @@ from passwords import Password
 
 
 def create_account(first_name, last_name, user_name, password):
-    accounts = Credential(first_name, last_name, user_name, password)
-    return accounts
+    ac = Credential(first_name, last_name, user_name, password)
+    return ac
 
 
-def save_account(accounts):
-    accounts.save_account()
+def save_account(ac):
+    ac.save_account()
 
 
-def delete_account(accounts):
-    accounts.delete_account()
+def delete_account(ac):
+    ac.delete_account()
 
 
 def find_accounts(user_name):
@@ -70,11 +70,11 @@ def main():
             account = find_accounts(username)
             if account.user_name == username and account.password == password:
 
-                print('logged in ')
+                print('LOGIN SUCCESSFUL')
                 while True:
 
                     print(
-                        f'Welcome {username}, Use the following numbers to select their corresponding values')
+                        f'Welcome {username},Please select from the menus below')
 
                     print(
                         ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
@@ -94,7 +94,7 @@ def main():
                         save_page(create_page(page, password))
 
                     elif log_choice == 2:
-                        print("Enter the name of the page you want to delete")
+                        print("Enter Page name")
 
                         page = input()
                         if isexist_page(page):
