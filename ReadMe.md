@@ -14,7 +14,7 @@ These are the behaviours/features that the application implements for use by a u
 
 ### SetUp / Installation Requirements
 ##### Prerequisites
-* python3.6
+* python3.8.10
 * pip3
 
 ### Cloning from github
