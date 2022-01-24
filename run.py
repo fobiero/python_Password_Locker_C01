@@ -149,7 +149,7 @@ def main():
 
                 log_choice = int(input())
                 if log_choice == 1:
-                    print('New page')
+                    print('Create page')
                     print('*'*100)
 
                     print('Page name')
@@ -162,7 +162,7 @@ def main():
                     save_page(create_page(page, password))
 
                 elif log_choice == 2:
-                    print("Enter the name of the page you want to delete")
+                    print("Enter page name you want to delete")
 
                     page = input()
                     if isexist_page(page):
@@ -170,7 +170,7 @@ def main():
                         delete_page(remove_page)
 
                     else:
-                        print(f'I cant find {page}')
+                        print(f'Page not Found {page}')
 
                 elif log_choice == 3:
                     if display_pages():
@@ -201,7 +201,7 @@ def main():
                 print('NO ACCOUNTS')
 
         elif choice == 5:
-            print('We have to see you Leave, :) Untill next time. GOODBYE!')
+            print('Untill next time.!GOODBYE :)')
             break
 
 
