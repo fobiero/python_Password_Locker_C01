@@ -165,7 +165,7 @@ def main():
                     else:
                         print(f'PAGE NOT FOUND {page}')
 
-# @TODO: Debug positional arguments
+# @TODO: Debug positional arguments to DELETE PAGE
                 elif log_select == 3:
                     if display_pages():
                         for pag in display_pages():
