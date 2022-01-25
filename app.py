@@ -39,12 +39,12 @@ def save_page(passwords):
     passwords.save_page()
 
 
-def find_page(pager):
-    return Password.find_by_page(pager)
+def find_page(page):
+    return Password.find_by_page(page)
 
 
-def is_valid(pager):
-    return Password.page_exists(pager)
+def is_valid(page):
+    return Password.page_exists(page)
 
 
 def delete_page(passwords):
