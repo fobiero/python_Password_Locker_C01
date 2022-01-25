@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing_extensions import Self
+# from pydoc import pager
 from credential import Credential
 from passwords import Password
 
@@ -165,8 +165,9 @@ def main():
                     else:
                         print(f'PAGE NOT FOUND {page}')
 
+# @TODO: Debug positional arguments
                 elif log_select == 3:
-                    if display_pages(Self):
+                    if display_pages():
                         for pag in display_pages():
                             print(
                                 f'{pag.page}:{pag.password}'

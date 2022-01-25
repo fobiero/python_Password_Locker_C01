@@ -30,7 +30,7 @@ class Credential:
     @classmethod
     def account_exists(cr, user_name):
         '''
-        Check for accounts
+        Check for Created Accounts
         '''
         for account in cr.user_credential:
             if account.user_name == user_name:

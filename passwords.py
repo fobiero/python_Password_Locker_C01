@@ -12,7 +12,8 @@ class Password:
     def delete_page(self):
         Password.user_pass.remove(self)
 
-    # @classmethod
+    # @
+    # @TODO: Check created accounts 
     def display_page(self, cls):
         return cls.user_pass
 
