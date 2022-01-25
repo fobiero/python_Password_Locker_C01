@@ -4,7 +4,6 @@
 from credential import Credential
 from passwords import Password
 
-
 def create_account(first_name, last_name, user_name, password):
     ac = Credential(first_name, last_name, user_name, password)
     return ac
@@ -29,7 +28,6 @@ def isexist_accounts(user_name):
 def display_accounts():
     return Credential.display_accounts()
 
-
 def create_page(page, password):
     passwords = Password(page, password)
     return passwords
@@ -39,8 +37,8 @@ def save_page(passwords):
     passwords.save_page()
 
 
-def find_page(page):
-    return Password.find_by_page(page)
+def find_page(pager):
+    return Password.find_by_page(pager)
 
 
 def is_valid(pager):
@@ -80,13 +78,12 @@ def main():
                         print('New page')
                         print('-'*40)
 
-                        print('Page name')
+                        print('Enter Page Name')
                         page = input()
 
-                        print('password')
+                        print('Enter Password')
                         password = input()
 
-                    # created and saved page
                         save_page(create_page(page, password))
 
                     elif log_select == 2:
@@ -98,7 +95,7 @@ def main():
                             delete_page(remove_page)
 
                         else:
-                            print(f'I cant find {page}')
+                            print(f'{page} Not Found')
 
                     elif log_select == 3:
                         if display_pages():
@@ -107,7 +104,7 @@ def main():
                                     f'{log.page}:{log.password}'
                                 )
                         else:
-                            print('NO PASSWORD SAVED YET')
+                            print('PASSWORDS NOT CREATED')
                             print('\n')
 
                     elif log_select == 4:
@@ -120,20 +117,20 @@ def main():
             print('NEW ACCOUNT')
             print('-'*40)
 
-            print('FIRSTNAME')
+            print('ENTER FIRSTNAME')
             first_name = input()
 
-            print('LASTNAME')
+            print('ENTER LASTNAME')
             last_name = input()
 
-            print('USERNAME')
+            print('ENTER USERNAME')
             user_name = input()
 
-            print('PASSWORD')
+            print('ENTER PASSWORD')
             password = input()
 
             save_account(create_account(first_name, last_name, user_name, password))
-            print('ACCOUNT CREATED')
+            print('ACCOUNT CREATED SUCCESSFULLY')
             while True:
 
                 print(
@@ -146,10 +143,10 @@ def main():
                     print('Create page')
                     print('-'*40)
 
-                    print('Page Name: ')
+                    print('Enter Page Name: ')
                     page = input()
 
-                    print('password')
+                    print('Enter Password')
                     password = input()
 
                     # created and saved page
