@@ -56,10 +56,10 @@ def display_pages():
 
 def main():
     print('WELCOME TO PASSLOCK')
-    print('Please Use the provided letters to get you started')
+    print('Please Use Options to get you started')
     while True:
 
-        print(" 1) LOGIN \n 2) SIGN UP \n 3) ABOUT PASSLOCK \n 4) DISPLAY ACCOUNTS \n 5) SIGN OUT")
+        print(" 1) LOGIN \n 2) CREATE ACCOUNT \n 3) ABOUT PASSLOCK \n 4) DISPLAY ACCOUNTS \n 5) LOGOUT")
 
         select = int(input())
         if select == 1:
@@ -74,7 +74,7 @@ def main():
                     print(
                         f'Welcome {username},Please select from the Options below')
                     print(
-                        ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
+                        ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) logout ')
 
                     log_select = int(input())
                     if log_select == 1:
