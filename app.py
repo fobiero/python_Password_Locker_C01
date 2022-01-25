@@ -79,7 +79,7 @@ def main():
                     log_select = int(input())
                     if log_select == 1:
                         print('New page')
-                        print('*'*100)
+                        print('-'*40)
 
                         print('Page name')
                         page = input()
@@ -117,7 +117,7 @@ def main():
 
         if select == 2:
             print('NEW ACCOUNT')
-            print('-'*100)
+            print('-'*40)
 
             print('FIRSTNAME')
             first_name = input()
@@ -143,7 +143,7 @@ def main():
                 log_select = int(input())
                 if log_select == 1:
                     print('Create page')
-                    print('-'*100)
+                    print('-'*40)
 
                     print('Page Name: ')
                     page = input()
@@ -167,11 +167,9 @@ def main():
 
 # @TODO: Debug positional arguments to DELETE PAGE
                 elif log_select == 3:
-                    if display_pages():
-                        for pag in display_pages():
-                            print(
-                                f'{pag.page}:{pag.password}'
-                            )
+                    if display_pages(page):
+                        for pag in display_pages(page):
+                            print(f'{pag.page}:{pag.password}')
                     else:
                         print('NO PASSWORDS CREATED')
 
@@ -195,7 +193,7 @@ def main():
                 print('NO ACCOUNTS')
 
         elif select == 5:
-            print('Untill next time.!GOODBYE :)')
+            print('WE HATE TO SEE YOU LEAVE! -->> GOODBYE !!')
             break
 
 

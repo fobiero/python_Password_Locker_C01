@@ -9,7 +9,7 @@ class Credential:
 
     def save_account(self):
         '''
-        save accounts to the accounts array
+        save accounts to the User_Credetnaials Array
         '''
         Credential.user_credential.append(self)
 
@@ -21,7 +21,7 @@ class Credential:
     @classmethod
     def find_by_user_name(cr, user_name):
         '''
-        If Username does not exist then terminates app
+        If Username !exist then terminates app
         '''
         for account in cr.user_credential:
             if account.user_name == user_name:
