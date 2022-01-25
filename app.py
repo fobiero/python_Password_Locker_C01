@@ -43,9 +43,8 @@ def find_page(page):
     return Password.find_by_page(page)
 
 
-def is_valid(page):
-    return Password.page_exists(page)
-
+def is_valid(pager):
+    return Password.page_exists(pager)
 
 def delete_page(passwords):
     passwords.delete_page()
@@ -104,16 +103,18 @@ def main():
                     elif log_select == 3:
                         if display_pages():
                             for log in display_pages():
-                                print(f'{log.page}:{log.password}')
+                                print(
+                                    f'{log.page}:{log.password}'
+                                )
                         else:
                             print('NO PASSWORD SAVED YET')
                             print('\n')
 
                     elif log_select == 4:
-                        print('adios')
+                        print('GOODBYE!')
                         break
             else:
-                return False
+                print('Not found')
 
         if select == 2:
             print('NEW ACCOUNT')
@@ -167,9 +168,11 @@ def main():
 
 # @TODO: Debug positional arguments to DELETE PAGE
                 elif log_select == 3:
-                    if display_pages(page):
-                        for pag in display_pages(page):
-                            print(f'{pag.page}:{pag.password}')
+                    if display_pages():
+                        for log in display_pages():
+                            print(
+                                f'{log.page}:{log.password}'
+                            )
                     else:
                         print('NO PASSWORDS CREATED')
 
