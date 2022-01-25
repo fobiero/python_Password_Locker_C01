@@ -25,7 +25,7 @@ In your terminal:
 ### Running the Application
 To run the application, in your terminal:
  * $ #!/usr/bin/env python3.6.8
- * $ chmod +x run.py
+ * $ chmod +x app.py
  * $ ./app.py
 
 ### Technologies Used

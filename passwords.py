@@ -17,7 +17,7 @@ class Password:
         return cls.user_pass
 
     # @classmethod
-    def find_by_page(cls, pager):
+    def find_by_page(self, cls, pager):
         for paged in cls.user_pass:
             if paged.page == pager:
                 return paged

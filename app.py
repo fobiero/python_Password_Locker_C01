@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # from pydoc import pager
+from pydoc import pager
 from credential import Credential
 from passwords import Password
 
@@ -48,8 +49,8 @@ def delete_page(passwords):
     passwords.delete_page()
 
 
-def display_pages():
-    return Password.display_page()
+def display_pages(cls):
+    return Password.display_page(cls)
 
 def main():
     print('WELCOME TO PASSLOCK')
@@ -117,16 +118,16 @@ def main():
             print('NEW ACCOUNT')
             print('-'*40)
 
-            print('ENTER FIRSTNAME')
+            print('~ FIRSTNAME')
             first_name = input()
 
-            print('ENTER LASTNAME')
+            print('~ LASTNAME')
             last_name = input()
 
-            print('ENTER USERNAME')
+            print('~ USERNAME')
             user_name = input()
 
-            print('ENTER PASSWORD')
+            print('~PASSWORD')
             password = input()
 
             save_account(create_account(first_name, last_name, user_name, password))
@@ -137,7 +138,7 @@ def main():
                     f'Welcome {user_name}, Select from the Options below:')
                 print(
                     ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
-
+# @TODO:Able to Log-in and create account  (DOne) 
                 log_select = int(input())
                 if log_select == 1:
                     print('Create page')
@@ -146,7 +147,7 @@ def main():
                     print('Enter Page Name: ')
                     page = input()
 
-                    print('Enter Password')
+                    print('Password')
                     password = input()
 
                     # created and saved page
@@ -156,14 +157,14 @@ def main():
                     print("Enter Page Name")
 
                     page = input()
-                    if is_valid(page):
-                        remove_page = (page)
+                    if is_valid(pager):
+                        remove_page = (pager)
                         delete_page(remove_page)
 
                     else:
                         print(f'PAGE NOT FOUND {page}')
 
-# @TODO: Debug positional arguments to DELETE PAGE
+# @TODO: Debug positional arguments to DELETE PAGE -- DEBUG ERROR
                 elif log_select == 3:
                     if display_pages():
                         for log in display_pages():
@@ -176,6 +177,7 @@ def main():
                 elif log_select == 4:
                     break
 
+    # @TODO: Able to check About PassLock (DONE)
         elif select == 3:
             print('ABOUT PASSLOCK')
             print(
@@ -191,7 +193,7 @@ def main():
                     )
             else:
                 print('NO ACCOUNTS')
-
+# @TODO:Able to Logout (DONE)
         elif select == 5:
             print('WE HATE TO SEE YOU LEAVE! -->> GOODBYE !!')
             break
