@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from typing_extensions import Self
 from credential import Credential
 from passwords import Password
 
@@ -52,7 +53,6 @@ def delete_page(passwords):
 
 def display_pages():
     return Password.display_page()
-
 
 def main():
     print('WELCOME TO PASSLOCK')
@@ -117,7 +117,7 @@ def main():
 
         if select == 2:
             print('NEW ACCOUNT')
-            print('*'*100)
+            print('-'*100)
 
             print('FIRSTNAME')
             first_name = input()
@@ -131,9 +131,7 @@ def main():
             print('PASSWORD')
             password = input()
 
-            save_account(create_account(
-                first_name, last_name, user_name, password))
-            # create and save a new account
+            save_account(create_account(first_name, last_name, user_name, password))
             print('ACCOUNT CREATED')
             while True:
 
@@ -145,7 +143,7 @@ def main():
                 log_select = int(input())
                 if log_select == 1:
                     print('Create page')
-                    print('*'*100)
+                    print('-'*100)
 
                     print('Page Name: ')
                     page = input()
@@ -168,7 +166,7 @@ def main():
                         print(f'PAGE NOT FOUND {page}')
 
                 elif log_select == 3:
-                    if display_pages():
+                    if display_pages(Self):
                         for pag in display_pages():
                             print(
                                 f'{pag.page}:{pag.password}'
