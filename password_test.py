@@ -1,7 +1,6 @@
 from passwords import Password
 import unittest
 
-
 class TestPasswords(unittest.TestCase):
     def tearDown(self):
         '''
@@ -14,13 +13,13 @@ class TestPasswords(unittest.TestCase):
         this test creates a new instance of the passwords class
         before every test
         '''
-        self.new_password = Password('facebook', '12345')
+        self.new_password = Password('gmail', '12345')
 
     def test_init(self):
         '''
         this test checks whether the data enterd into the properties if called wll appear
         '''
-        self.assertEqual(self.new_password.page, 'facebook')
+        self.assertEqual(self.new_password.page, 'gmail')
         self.assertEqual(self.new_password.password, '12345')
 
     def test_save_page(self):
@@ -35,7 +34,7 @@ class TestPasswords(unittest.TestCase):
         this test like the first now test whether both instances created are appended to the array
         '''
         self.new_password.save_page()
-        test_pass = Password('instagram', '54321')
+        test_pass = Password('yahoo', '54321')
         test_pass.save_page()
         self.assertEqual(len(Password.user_passwords), 2)
 
@@ -44,7 +43,7 @@ class TestPasswords(unittest.TestCase):
         this test checks for the delete function that uses the .remove methos
         '''
         self.new_password.save_page()
-        test_pass = Password('instagram', '54321')
+        test_pass = Password('instagram', '123456')
         test_pass.save_page()
         self.new_password.delete_page()
         self.assertEqual(len(Password.user_passwords), 1)
@@ -57,7 +56,7 @@ class TestPasswords(unittest.TestCase):
         this test checks whether a password saved can be searched
         '''
         self.new_password.save_page()
-        test_pass = Password('instagram', '54321')  # new contact
+        test_pass = Password('instagram', '121314')  # new contact
         test_pass.save_page()
         found_page = Password.find_by_page('instagram')
         self.assertEqual(found_page.page, test_pass.page)
@@ -67,7 +66,7 @@ class TestPasswords(unittest.TestCase):
         returns a true/false value depending on prescence of the searched password
         '''
         self.new_password.save_page()
-        test_pass = Password('instagram', '54321')  # new contact
+        test_pass = Password('instagram', '121314')  # new contact
         test_pass.save_page()
         page_exist = Password.page_exists('instagram')
         self.assertTrue(page_exist)
