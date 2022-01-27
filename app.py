@@ -33,14 +33,11 @@ def create_page(page, password):
     passwords = Password(page, password)
     return passwords
 
-
 def save_page(passwords):
     passwords.save_page()
 
-
 def find_page(pager):
     return Password.find_by_page(pager)
-
 
 def is_valid(pager):
     return Password.page_exists(pager)
